@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="pt-BR"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Esponja Rápida</title><meta name="theme-color" content="#2f2119">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Lora:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--cream:#f4ecdc;--cream-2:#fff8f0;--sand:#eadcc3;--salmon:#d88f79;--salmon-2:#efb6a3;--brown:#8a5a2b;--brown-2:#5b3a22;--brown-3:#2f2119;--gold:#c28b2f;--ink:#352d24;--muted:#766b5d;--white:#fffdf9;--green:#3fa36b;--red:#b5482f;
+--tema:#F9A825;--tema-t:#FFF8E1;--tema-t2:#FFECB3;--tema-d:#8A5200}
+*{box-sizing:border-box;margin:0}
+body{background:var(--cream);color:var(--ink);font:17px/1.55 Inter,system-ui,sans-serif;min-height:100vh}
+body:before{content:"";display:block;height:10px;background:linear-gradient(90deg,var(--salmon) 0 25%,var(--gold) 0 50%,var(--brown) 0 75%,var(--brown-3) 0)}
+h1,h2,h3{font-family:Lora,Georgia,serif;color:var(--brown-3);line-height:1.2}
+header{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:14px 16px;max-width:820px;margin:0 auto}
+header h1{font-size:24px}header small{color:var(--muted);display:block;font-family:Inter;font-size:13px}
+nav{display:flex;gap:8px;max-width:820px;margin:0 auto;padding:0 16px 12px}
+nav button{flex:1;font:600 15px Inter;padding:10px 6px;background:var(--white);border:3px solid var(--brown-3);border-radius:12px;color:var(--brown-3);cursor:pointer;box-shadow:3px 3px 0 var(--brown-3)}
+nav button.on{background:var(--brown-3);color:var(--cream)}
+main{max-width:820px;margin:0 auto;padding:6px 16px 60px}
+.card{background:var(--white);border:3px solid var(--brown-3);border-radius:16px;box-shadow:5px 5px 0 var(--brown-3);padding:18px;margin-bottom:18px}
+.topic{display:block;width:100%;text-align:left;cursor:pointer;font:inherit;background:var(--tema-t);border-left-width:12px;border-left-color:var(--tema)}
+.topic h3{font-size:20px}.topic p{color:var(--muted);font-size:14px;margin-top:4px}
+.chip{display:inline-block;font:700 12px Inter;letter-spacing:.04em;text-transform:uppercase;padding:3px 10px;border:2px solid var(--brown-3);border-radius:99px;background:var(--tema);color:var(--brown-3);margin-bottom:8px}
+.bar{height:10px;border:2px solid var(--brown-3);border-radius:9px;background:var(--white);margin-top:10px;overflow:hidden}.bar i{display:block;height:100%;background:var(--tema)}
+.q{border-top:12px solid var(--tema)}
+.src{font-size:13px;color:var(--muted);margin-bottom:8px}
+.en{font-family:Lora,serif;font-size:19px;color:var(--brown-3);margin-bottom:10px}
+.itens{background:var(--tema-t);border:2px dashed var(--tema-d);border-radius:10px;padding:10px 14px;margin:8px 0 12px;font-size:16px}.itens p+p{margin-top:6px}
+.alt{display:flex;gap:12px;width:100%;text-align:left;font:inherit;background:var(--white);border:2.5px solid var(--brown-3);border-radius:12px;padding:11px 12px;margin:9px 0;cursor:pointer;box-shadow:3px 3px 0 var(--brown-3)}
+.alt:active{transform:translate(2px,2px);box-shadow:1px 1px 0 var(--brown-3)}
+.alt b{flex:none;width:30px;height:30px;border-radius:50%;background:var(--tema-t2);border:2px solid var(--brown-3);display:grid;place-items:center;font-size:14px}
+.alt.dis{cursor:default;box-shadow:none;opacity:.8}.alt.dis:active{transform:none}
+.alt.ok{border-color:var(--green);background:#e7f5ec;opacity:1}.alt.bad{border-color:var(--red);background:#fbece7;opacity:1}
+.fb{margin-top:16px;border-radius:14px;padding:14px;border:2.5px solid}
+.fb.ok{background:#e7f5ec;border-color:var(--green)}.fb.bad{background:var(--cream-2);border-color:var(--brown-3)}
+.fb .h{display:flex;align-items:center;gap:12px;font:700 18px Lora,serif}
+.fb svg{flex:none}.fb .ex{margin-top:10px;font-size:16px}
+.obs{margin-top:10px;font-size:14px;background:var(--sand);border-radius:10px;padding:8px 12px;color:var(--brown-2)}
+.act{display:flex;gap:10px;margin-top:16px;flex-wrap:wrap}
+.btn{font:700 16px Inter;padding:11px 18px;border:3px solid var(--brown-3);border-radius:12px;background:var(--tema);color:var(--brown-3);cursor:pointer;box-shadow:3px 3px 0 var(--brown-3)}
+.btn.sec{background:var(--white)}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:18px}
+.stat{text-align:center;background:var(--white);border:3px solid var(--brown-3);border-radius:14px;padding:12px 4px;box-shadow:3px 3px 0 var(--brown-3)}.stat b{display:block;font:700 28px Lora,serif}.stat span{font-size:13px;color:var(--muted)}
+.list button{display:flex;align-items:center;gap:10px;width:100%;text-align:left;font:inherit;background:var(--white);border:2px solid var(--brown-3);border-radius:10px;padding:9px 12px;margin:7px 0;cursor:pointer}
+.dot{width:14px;height:14px;border-radius:50%;border:2px solid var(--brown-3);flex:none;background:var(--sand)}.dot.c{background:var(--green)}.dot.e{background:var(--red)}
+.muted{color:var(--muted);font-size:14px}
+.ed{display:inline-block;font:600 12px Inter;background:var(--brown-3);color:var(--cream);border-radius:8px;padding:2px 8px;margin:6px 0 0}
+.zr{font:600 13px Inter;background:none;border:2px solid var(--red);color:var(--red);border-radius:10px;padding:5px 12px;cursor:pointer;margin:-8px 0 18px}
+.fe{margin:0 0 12px;font-size:14px;background:#fbece7;border:2px dashed var(--red);border-radius:10px;padding:8px 12px;color:var(--brown-2)}
+
+.back{font:600 14px Inter;background:none;border:2px solid var(--brown-3);border-radius:10px;padding:5px 12px;color:var(--brown-3);cursor:pointer;margin:0 0 14px}
+.rd{border-top:12px solid var(--tema);min-height:230px;display:flex;flex-direction:column;justify-content:space-between}
+.rd p{font:500 21px/1.6 Lora,Georgia,serif;color:var(--brown-3)}
+.rd p.long{font-size:18px}
+.rd .fonte{margin-top:18px;font-size:12px;color:var(--muted);opacity:.75;letter-spacing:.02em}
+.cnt{font:600 13px Inter;color:var(--muted);margin:0 0 8px}
+.nav2{display:flex;gap:12px}.nav2 .btn{flex:1}.btn[disabled]{opacity:.35;cursor:default;box-shadow:none}
+.vazio{font-size:15px;color:var(--muted);padding:6px 0}
+</style></head><body>
+<header><div><h1>Esponja Rápida</h1><small>Leitura rápida · assertivas literais de provas</small></div></header>
+<main id="app"></main>
+<script>
+const D=[{"id": "ADM", "nome": "Direito Administrativo", "c": "#F9A825", "t": "#FFF8E1", "t2": "#FFECB3", "d": "#8A5200", "topicos": [{"n": 1, "nome": "Teoria Geral e Princípios da Administração Pública", "sub": "Regime jurídico-administrativo, princípios e LINDB", "a": [["Na interpretação de normas sobre gestão pública, em conformidade com a Lei de Introdução às Normas do Direito Brasileiro, serão considerados os obstáculos e as dificuldades reais do gestor e as exigências das políticas públicas para seu cargo, sem prejuízo dos direitos dos administrados.", "Juiz · TJCE 2025"], ["Em decisão sobre regularidade de conduta ou validade de ato, contrato, ajuste, processo ou norma administrativa, serão consideradas as circunstâncias práticas que houverem imposto, limitado ou condicionado a ação do agente.", "Juiz · TJCE 2025"], ["Na aplicação de sanções, serão consideradas a natureza e a gravidade da infração cometida, os danos que dela provierem para a administração pública, as circunstâncias agravantes ou atenuantes e os antecedentes do agente.", "Juiz · TJCE 2025"], ["As sanções aplicadas ao agente serão levadas em conta na dosimetria das demais sanções de mesma natureza e relativas ao mesmo fato.", "Juiz · TJCE 2025"], ["Atualmente, o princípio da legalidade no Direito Administrativo é compreendido como norma que vincula a atuação administrativa não apenas à lei, mas também ao Direito ou ao chamado bloco de constitucionalidade.", "Enam 2024.2"], ["Os direitos à vida privada e à intimidade podem ser limitados em situações de interesse público, desde que a medida seja adequada, necessária e proporcional ao fim almejado pela Administração Pública.", "Enam 2024.2"], ["A LINDB introduz um dever de justificação qualificada sobre a proporcionalidade do controle judicial da validade de ato, contrato, ajuste, processo ou norma administrativa, sendo necessário demonstrar a adequação e necessidade da medida, inclusive em face das possíveis alternativas.", "Enam 2024.2"], ["Os atos administrativos deverão ser motivados, com indicação dos fatos e dos fundamentos jurídicos, quando imponham ou agravem deveres, encargos ou sanções.", "Enam 2025.1"], ["A consideração das consequências jurídicas e administrativas é limitada aos fatos e fundamentos de mérito e jurídicos que se espera do decisor no exercício diligente de sua atuação.", "Enam 2025.2"], ["A responsabilização da agente pública exige a demonstração de dolo ou erro grosseiro, não sendo suficiente, por si só, a adoção de interpretação plausível posteriormente rejeitada pelo órgão de controle.", "Defensor · DPE-RJ 2026"]]}]}, {"id": "CON", "nome": "Direito Constitucional", "c": "#43A047", "t": "#E8F5E9", "t2": "#C8E6C9", "d": "#1B5E20", "topicos": [{"n": 1, "nome": "Teoria da Constituição e Hermenêutica", "sub": "Eficácia, recepção, repristinação, interpretação e mutação", "a": [["Da unidade da Constituição: a interpretação constitucional deve ser realizada de maneira a evitar contradições entre suas normas.", "Juiz · TJRJ 2025"], ["A interpretação jurídica consiste na atividade de revelar ou atribuir sentido a textos ou outros elementos normativos (como princípios implícitos, costumes, precedentes), notadamente para o fim de solucionar problemas. Trata-se de uma atividade intelectual informada por métodos, técnicas e parâmetros que procuram dar-lhe legitimidade, racionalidade e controlabilidade. A aplicação de uma norma jurídica é o momento final do processo interpretativo, sua incidência sobre os fatos relevantes. Na aplicação se dá a conversão da disposição abstrata em uma regra concreta, com a pretensão de conformar a realidade ao Direito, o ser ao dever-ser. É nesse momento que a norma jurídica se transforma em norma de decisão.", "Enam 2024.2 · Barroso"], ["Ao vincular-se à lógica do razoável, o método tópico-problemático confere ao julgador o papel de construir, por meio de argumentação consistente, a melhor solução para o problema, visando à realização da justiça do caso concreto.", "Enam 2024.2"], ["Em matéria de Direito Intertemporal, a irretroatividade é a regra geral do Direito brasileiro, forte nos princípios da segurança jurídica e de que o tempo rege o ato, o que, contudo, não impede, mesmo havendo outros valores jurídicos considerados relevantes, que a retroatividade possa ser excepcionalmente admitida.", "Enam 2025.1"], ["O critério da máxima efetividade exige que a interpretação de determinado direito conduza ao maior proveito o seu titular, com o menor sacrifício imposto aos titulares dos demais direitos em colisão, e conduza à aplicabilidade imediata, que prevê a incidência dos direitos humanos ao caso concreto sem qualquer lapso temporal.", "Enam 2025.2"]]}]}, {"id": "TRI", "nome": "Direito Tributário", "c": "#FB8C00", "t": "#FFF3E0", "t2": "#FFE0B2", "d": "#BF360C", "topicos": [{"n": 1, "nome": "Sistema Tributário Nacional e Direito Tributário", "sub": "Competência, limitações, imunidades e legislação tributária", "a": [["… salvo disposição em contrário, entram em vigor: os convênios que entre si celebrem a União, os Estados, o Distrito Federal e os Municípios, na data neles prevista.", "Juiz · TJRJ 2025"], ["As imunidades tributárias são limitações constitucionais ao poder de tributar. Consistem em hipóteses previstas diretamente na Constituição, em que determinados bens, pessoas, rendas ou atividades são excluídas da incidência de tributos.", "Enam 2026.1"], ["Sociedade de economia mista, cuja participação acionária é negociada em Bolsas de Valores, e que, inequivocamente, está voltada à remuneração do capital de seus controladores ou acionistas, não está abrangida pela regra da imunidade tributária prevista no Art. 150, inciso VI, alínea a, da Constituição, unicamente em razão das atividades desempenhadas.", "Enam 2026.1"], ["É vedado à União, aos Estados, ao Distrito Federal e aos Municípios instituir impostos sobre entidades religiosas e templos de qualquer culto, inclusive suas organizações assistenciais e beneficentes.", "Enam 2026.1"], ["A instituição de tributos não contemplados expressamente na Constituição Federal exige a edição de lei complementar federal.", "Defensor · DPE-SC 2026"]]}]}, {"id": "PCV", "nome": "Direito Processual Civil", "c": "#1E88E5", "t": "#E3F2FD", "t2": "#BBDEFB", "d": "#0D47A1", "topicos": [{"n": 1, "nome": "Teoria Geral do Processo e Normas Fundamentais", "sub": "Princípios fundamentais e norma processual no tempo e no espaço", "a": []}]}];
+let m=null,t=null,i=0;
+const app=document.getElementById('app');
+const esc=s=>String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;');
+function tema(x){const r=document.documentElement.style;r.setProperty('--tema',x.c);r.setProperty('--tema-t',x.t);r.setProperty('--tema-t2',x.t2);r.setProperty('--tema-d',x.d)}
+function home(){m=t=null;i=0;let h='<p class="muted" style="margin-bottom:16px">Escolha a matéria.</p>';
+ D.forEach((x,k)=>{const n=x.topicos.reduce((s,y)=>s+y.a.length,0);
+  h+='<button class="card topic" style="--tema:'+x.c+';--tema-t:'+x.t+'" data-m="'+k+'"><h3>'+esc(x.nome)+'</h3><p>'+n+' assertivas</p></button>'});
+ app.innerHTML=h;app.querySelectorAll('[data-m]').forEach(b=>b.onclick=()=>{m=D[+b.dataset.m];tema(m);topics()});window.scrollTo(0,0)}
+function topics(){t=null;i=0;let h='<button class="back" id="b">← Matérias</button><span class="chip">'+esc(m.nome)+'</span><p class="muted" style="margin-bottom:14px">Escolha o tópico do edital.</p>';
+ m.topicos.forEach((x,k)=>{h+='<button class="card topic" data-t="'+k+'"><h3>'+x.n+'. '+esc(x.nome)+'</h3><p>'+esc(x.sub)+' · '+x.a.length+' assertivas</p></button>'});
+ app.innerHTML=h;document.getElementById('b').onclick=home;
+ app.querySelectorAll('[data-t]').forEach(b=>b.onclick=()=>{t=m.topicos[+b.dataset.t];i=0;read()});window.scrollTo(0,0)}
+function read(){const n=t.a.length;
+ let h='<button class="back" id="b">← Tópicos</button><span class="chip">'+esc(m.nome)+' · '+t.n+'</span>';
+ if(!n){h+='<div class="card rd"><p class="vazio">Não foram encontradas assertivas literais e conceituais para este tópico nas provas já reunidas (Juiz, Enam, Defensor, Promotor, Analista).</p></div>'}
+ else{const a=t.a[i];h+='<div class="cnt">'+(i+1)+' / '+n+'</div><div class="card rd"><p'+(a[0].length>260?' class="long"':'')+'>'+esc(a[0])+'</p><div class="fonte">'+esc(a[1])+'</div></div>'+
+  '<div class="nav2"><button class="btn sec" id="v"'+(i?'':' disabled')+'>Voltar</button><button class="btn" id="a"'+(i<n-1?'':' disabled')+'>Avançar</button></div>'}
+ app.innerHTML=h;document.getElementById('b').onclick=topics;
+ if(n){document.getElementById('v').onclick=()=>{if(i>0){i--;read()}};document.getElementById('a').onclick=()=>{if(i<n-1){i++;read()}}}
+ window.scrollTo(0,0)}
+document.addEventListener('keydown',e=>{if(!t||!t.a.length)return;if(e.key==='ArrowRight'&&i<t.a.length-1){i++;read()}if(e.key==='ArrowLeft'&&i>0){i--;read()}});
+let x0=null;document.addEventListener('touchstart',e=>{x0=e.touches[0].clientX},{passive:true});
+document.addEventListener('touchend',e=>{if(x0===null||!t||!t.a.length)return;const d=e.changedTouches[0].clientX-x0;x0=null;if(d<-60&&i<t.a.length-1){i++;read()}if(d>60&&i>0){i--;read()}});
+home();
+</script></body></html>
